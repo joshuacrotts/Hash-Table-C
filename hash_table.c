@@ -35,9 +35,9 @@ static ht_hash_table* ht_new_sized( const int base_size )
 	ht_hash_table* ht = malloc( sizeof( ht_hash_table ) );
 	ht->base_size 	  = base_size; 
 	
-	ht->size 		  = next_prime( ht->base_size );
-	ht->count		  = 0;
-	ht->items 		  = calloc( ( size_t ) ht->size, sizeof( ht_item* ) );
+	ht->size 	  = next_prime( ht->base_size );
+	ht->count	  = 0;
+	ht->items 	  = calloc( ( size_t ) ht->size, sizeof( ht_item* ) );
 	return ht;
 }
 
@@ -68,12 +68,12 @@ static void ht_resize( ht_hash_table* ht, const int base_size )
 	
 	//	To delete new_ht, we give it ht's size and items.
 	const int tmp_size 	= ht->size;
-	ht->size 			= new_ht->size;
+	ht->size 		= new_ht->size;
 	new_ht->size 		= tmp_size;
 	
 	ht_item** tmp_items = ht->items;
-	ht->items 			= new_ht->items;
-	new_ht->items 		= tmp_items;
+	ht->items 	    = new_ht->items;
+	new_ht->items 	    = tmp_items;
 	
 	ht_del_hash_table( new_ht );	
 }
@@ -157,7 +157,7 @@ void ht_del_hash_table( ht_hash_table* ht )
 //
 static int ht_hash(const char* s, const int prime, const int size)
 {
-	long hash 		= 0;
+	long hash 	= 0;
 	const int len_s = strlen(s);
 	
 	for(int i = 0; i < len_s; i++)
@@ -230,7 +230,7 @@ void ht_insert( ht_hash_table* ht, const char* key, const char* value )
 //
 char* ht_search( ht_hash_table* ht, const char* key )
 {
-	int index = ht_get_hash( key, ht->size, 0 );
+	int index     = ht_get_hash( key, ht->size, 0 );
 	ht_item* item = ht->items[ index ];
 	
 	int hash_attempt = 1;
@@ -267,7 +267,7 @@ void ht_delete( ht_hash_table* ht, const char* key )
 		ht_resize_up( ht );
 	}
 	
-	int index 	  = ht_get_hash( key, ht->size, 0 );
+	int index     = ht_get_hash( key, ht->size, 0 );
 	ht_item* item = ht->items[ index ];
 	
 	int hash_attempt = 1;
