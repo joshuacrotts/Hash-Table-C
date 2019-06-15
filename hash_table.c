@@ -21,11 +21,11 @@ int HT_PRIME_2 = 199;
 
 static ht_item HT_DELETED_ITEM = { NULL, NULL };
 
-//====================================================================//
-//								      //								  
-//     		HASH TABLE Allocation and Sizing Functions	      //
-//								      //									  //
-//====================================================================//
+/*====================================================================/
+								      								  
+     		HASH TABLE Allocation and Sizing Functions	      
+								      									  
+  ====================================================================*/
 
 //
 //	Creates a hash_table based on the default size
@@ -144,11 +144,11 @@ void ht_del_hash_table( ht_hash_table* ht )
 	free( ht );
 }
 
-//====================================================================//
-//								      //
-//			HASH TABLE Hashing Functions		      //
-//								      //								  
-//====================================================================//
+/*====================================================================/
+								      
+						HASH TABLE Hashing Functions		      
+								      
+  ====================================================================*/
 
 //
 //	Creates a [hopefully] uniformly-distributed hash value for 
@@ -182,12 +182,12 @@ static int ht_get_hash( const char* s, const int num_buckets, const int attempt 
 	return ( hash_a + ( attempt * ( hash_b + 1 ) ) ) % num_buckets;
 }
 
-//====================================================================//
-//								      //
-//			   HASH TABLE FUNCTIONS			      //
-//		    Supports insert, delete, and search		      //
-//								      //																	  //
-//====================================================================//
+/*====================================================================
+								      
+							HASH TABLE FUNCTIONS			      
+					Supports insert, delete, and search		      
+								      																	  //
+  ====================================================================*/
 
 //
 //	Inserts a key/value pair into the hash table.
