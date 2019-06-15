@@ -1,0 +1,5 @@
+#Ignore GCH files
+*.gch
+
+#Ignore the executable
+*.exe
