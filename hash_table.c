@@ -22,9 +22,9 @@ int HT_PRIME_2 = 199;
 static ht_item HT_DELETED_ITEM = { NULL, NULL };
 
 //====================================================================//
-//																	  //
-//				HASH TABLE Allocation and Sizing Functions			  //
-//																	  //
+//								      //								  //
+//     		HASH TABLE Allocation and Sizing Functions	      //
+//								      //									  //
 //====================================================================//
 
 //
@@ -146,8 +146,8 @@ void ht_del_hash_table( ht_hash_table* ht )
 
 //====================================================================//
 //																	  //
-//					  HASH TABLE Hashing Functions					  //
-//																	  //
+//			HASH TABLE Hashing Functions		      //
+//								      //								  //
 //====================================================================//
 
 //
@@ -183,10 +183,10 @@ static int ht_get_hash( const char* s, const int num_buckets, const int attempt 
 }
 
 //====================================================================//
-//																	  //
-//						HASH TABLE FUNCTIONS						  //
-//				  Supports insert, delete, and search				  //
-//																	  //
+//								      //
+//			   HASH TABLE FUNCTIONS			      //
+//		    Supports insert, delete, and search		      //
+//								      //																	  //
 //====================================================================//
 
 //
